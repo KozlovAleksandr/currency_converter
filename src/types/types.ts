@@ -10,3 +10,21 @@ export type InputCurrencyProps = {
   setAmoutValue?: any;
   isReadOnly?: boolean;
 };
+
+export type RatesColumn = {
+  id: 'code' | 'rate';
+  label: string;
+  minWidth?: number;
+  align?: 'right' | 'center';
+  format?: (value: number) => string;
+  width?: string;
+};
+
+export type RatesData = {
+  code: string;
+  rate: number;
+};
+
+export type RatesResponce = {
+  [key: string]: number;
+};
