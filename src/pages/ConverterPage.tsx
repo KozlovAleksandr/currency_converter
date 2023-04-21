@@ -1,10 +1,10 @@
 import { Grid, IconButton } from '@mui/material';
-import styles from './ConverterPage.module.scss';
 import InputCurrency from '../components/InputCurrency';
 import SelectCurrency from '../components/SelectCurrency';
 import { RiExchangeFill } from 'react-icons/ri';
 import { useEffect, useState } from 'react';
 import { currencyAPI } from '../api/apiRequest';
+import styles from './index.module.scss';
 
 const ConverterPage = () => {
   const [baseCurrency, setBaseCurrency] =
@@ -31,13 +31,15 @@ const ConverterPage = () => {
   };
 
   return (
-    <div className={styles.main}>
+    <div>
       <Grid container spacing={2}>
-        <InputCurrency
-          quantum={amount}
-          setAmoutValue={setAmount}
-          label="Сумма"
-        />
+        <Grid item xs={12}>
+          <InputCurrency
+            quantum={amount}
+            setAmoutValue={setAmount}
+            label="Сумма"
+          />
+        </Grid>
         <Grid item xs={5.5}>
           <SelectCurrency
             value={baseCurrency}
@@ -48,7 +50,7 @@ const ConverterPage = () => {
 
         <Grid item xs={1}>
           <IconButton onClick={swap} color="primary">
-            <RiExchangeFill className={styles.swap} />
+            <RiExchangeFill size={37} />
           </IconButton>
         </Grid>
 
@@ -59,12 +61,13 @@ const ConverterPage = () => {
             label="Покупка"
           />
         </Grid>
-
-        <InputCurrency
-          quantum={result !== 0 ? result : 0}
-          isReadOnly={true}
-          label="Итог"
-        />
+        <Grid item xs={12}>
+          <InputCurrency
+            quantum={result !== 0 ? result : 0}
+            isReadOnly={true}
+            label="Итог"
+          />
+        </Grid>
       </Grid>
     </div>
   );

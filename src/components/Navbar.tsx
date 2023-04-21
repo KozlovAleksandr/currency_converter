@@ -1,5 +1,7 @@
 import { AppBar, Container, Toolbar, Typography, Box } from '@mui/material';
+import { BsCurrencyExchange } from 'react-icons/bs';
 import NavbarLink from './NavbarLink';
+import styles from './index.module.scss';
 
 const Navbar = () => {
   const pages = [
@@ -16,6 +18,7 @@ const Navbar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
+            <BsCurrencyExchange className={styles.currencyIcon} />
             Конвертeр валют
           </Typography>
 
