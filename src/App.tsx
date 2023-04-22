@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import RatesPage from './pages/RatesPage';
 import ConverterPage from './pages/ConverterPage';
@@ -12,10 +12,8 @@ const App: React.FC = (): JSX.Element => {
       <Navbar />
       <Container maxWidth="md" className={styles.container}>
         <div className={styles.App}>
-          <Routes>
-            <Route path="/" element={<RatesPage />} />
-            <Route path="/converter" element={<ConverterPage />} />
-          </Routes>
+          <Route path="/" exact component={RatesPage} />
+          <Route path="/converter" component={ConverterPage} />
         </div>
       </Container>
     </BrowserRouter>

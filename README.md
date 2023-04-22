@@ -15,7 +15,8 @@ SPA для конвертировании валют.
 - Курсы валют автомотически обновлятся каждую минуту (API не предоставляет регулярно обновляющиеся курсы, но каждую минуты происходит повторный запрос и отрисовка таблицы с курсами, для демонстрации чего в консоль выводятся получаемые от API данные и время получения).
 - Курсы валют возможно обновить принудительно с помощью кнопки.
   </br>
-  ![RatesPage](https://github.com/KozlovAleksandr/currency_converter/raw/dev/src/img/RatesPage.png)
+  </br>
+  ![RatesPage](https://github.com/KozlovAleksandr/currency_converter/raw/main/src/img/RatesPage.png)
 
 ## Страница с конвертацией
 
@@ -23,13 +24,14 @@ SPA для конвертировании валют.
 - Базовую и целевую валюты, а также сумму конвертации возможно выбрать самостоятельно.
 - Есть возможность быстрой смены базовой и целевой валют с помощью кнопки.
   </br>
-  ![ConverterPage](https://github.com/KozlovAleksandr/currency_converter/raw/dev/src/img/ConverterPage.png)
+  </br>
+  ![ConverterPage](https://github.com/KozlovAleksandr/currency_converter/raw/main/src/img/ConverterPage.png)
 
 ### Применённые технологии
 
 - React
 - Открыторе API для получения курсов валют https://app.exchangerate-api.com
-- React Router v6.3.0
-- Material-UI - UI фреймворк
+- React Router v5.0.0
+- Material-UI
 - Пакетный менеджер <i>yarn</i>
 - TypeScript

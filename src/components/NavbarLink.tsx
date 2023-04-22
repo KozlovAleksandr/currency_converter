@@ -1,9 +1,9 @@
 import { Button, Typography } from '@mui/material';
-import { NavLink, To } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 type NavbarLinkProps = {
   title: string;
-  link: To;
+  link: string;
 };
 
 const NavbarLink: React.FC<NavbarLinkProps> = (props): JSX.Element => {
