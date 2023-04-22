@@ -3,7 +3,11 @@ import { SelectCurrencyProps } from '../types/types';
 import { currencyAPI } from '../api/apiRequest';
 import { useEffect, useState } from 'react';
 
-const SelectCurrency = ({ value, setValue, label }: SelectCurrencyProps) => {
+const SelectCurrency: React.FC<SelectCurrencyProps> = ({
+  value,
+  setValue,
+  label,
+}): JSX.Element => {
   const [currencies, setCurrencies] = useState([]);
 
   useEffect(() => {

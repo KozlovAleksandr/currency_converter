@@ -6,7 +6,7 @@ import ConverterPage from './pages/ConverterPage';
 import styles from './App.module.scss';
 import { Container } from '@mui/material';
 
-const App: React.FC = () => {
+const App: React.FC = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Navbar />

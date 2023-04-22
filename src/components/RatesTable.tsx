@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -6,7 +5,6 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { TablePagination } from '@mui/material';
 import { RatesColumn } from '../types/types';
 import createDataForTable from '../utils/createDataForTable';
 
@@ -21,25 +19,18 @@ const columns: RatesColumn[] = [
   },
 ];
 
-const RatesTable = ({ rates }: { rates: any }) => {
-  const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(900);
+type RatesProps = {
+  [key: string]: any;
+};
+
+const RatesTable: React.FC<RatesProps> = ({ rates }): JSX.Element => {
+  const page = 0;
+  const rowsPerPage = 500;
 
   const rows = [];
   for (var key in rates) {
     rows.push(createDataForTable(key, rates[key]));
   }
-
-  const handleChangePage = (event: unknown, newPage: number) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
 
   return (
     <Paper sx={{ width: '100%' }}>
@@ -85,15 +76,6 @@ const RatesTable = ({ rates }: { rates: any }) => {
           </TableBody>
         </Table>
       </TableContainer>
-      {/* <TablePagination
-        rowsPerPageOptions={[100, 200, 500]}
-        component="div"
-        count={rows.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      /> */}
     </Paper>
   );
 };

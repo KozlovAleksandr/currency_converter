@@ -1,5 +1,4 @@
 import { Button, Typography } from '@mui/material';
-import { FC } from 'react';
 import { NavLink, To } from 'react-router-dom';
 
 type NavbarLinkProps = {
@@ -7,7 +6,7 @@ type NavbarLinkProps = {
   link: To;
 };
 
-const NavbarLink = (props: NavbarLinkProps) => {
+const NavbarLink: React.FC<NavbarLinkProps> = (props): JSX.Element => {
   const { title, link } = props;
   return (
     <Button sx={{ color: '#fff' }}>

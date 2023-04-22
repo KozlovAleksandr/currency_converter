@@ -8,12 +8,12 @@ import {
 import { GrMoney } from 'react-icons/gr';
 import { InputCurrencyProps } from '../types/types';
 
-const InputCurrency = ({
+const InputCurrency: React.FC<InputCurrencyProps> = ({
   quantum,
   label,
   setAmoutValue,
   isReadOnly,
-}: InputCurrencyProps) => {
+}): JSX.Element => {
   return (
     <Grid item xs={12}>
       <FormControl fullWidth>

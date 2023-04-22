@@ -6,7 +6,7 @@ import RatesTable from '../components/RatesTable';
 import { RatesResponce } from '../types/types';
 import getLog from '../utils/getLog';
 
-const RatesPage = () => {
+const RatesPage: React.FC = (): JSX.Element => {
   const [baseCurrency, setBaseCurrency] =
     useState<string>('RUB, Russian Ruble');
   const [rates, setRates] = useState<RatesResponce>({});
