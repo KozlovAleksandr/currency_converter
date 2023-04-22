@@ -4,9 +4,8 @@ import SelectCurrency from '../components/SelectCurrency';
 import { RiExchangeFill } from 'react-icons/ri';
 import { useEffect, useState } from 'react';
 import { currencyAPI } from '../api/apiRequest';
-import styles from './index.module.scss';
 
-const ConverterPage = () => {
+const ConverterPage: React.FC = (): JSX.Element => {
   const [baseCurrency, setBaseCurrency] =
     useState<string>('RUB, Russian Ruble');
   const [targetCurrency, setTargetCurrency] = useState<string>(

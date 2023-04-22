@@ -1,10 +1,10 @@
 import { AppBar, Container, Toolbar, Typography, Box } from '@mui/material';
 import { BsCurrencyExchange } from 'react-icons/bs';
 import NavbarLink from './NavbarLink';
-import styles from './index.module.scss';
+import { PageNavigation } from '../types/types';
 
-const Navbar = () => {
-  const pages = [
+const Navbar: React.FC = (): JSX.Element => {
+  const pages: PageNavigation[] = [
     { title: 'Курсы', link: '/' },
     { title: 'Конвертер', link: '/converter' },
   ];
@@ -18,7 +18,13 @@ const Navbar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            <BsCurrencyExchange className={styles.currencyIcon} />
+            <BsCurrencyExchange
+              style={{
+                fontSize: '28px',
+                marginRight: '12px',
+                marginBottom: '-5px',
+              }}
+            />
             Конвертeр валют
           </Typography>
 

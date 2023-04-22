@@ -1,3 +1,8 @@
+export type PageNavigation = {
+  title: string;
+  link: string;
+};
+
 export type SelectCurrencyProps = {
   value: string;
   setValue: any;
